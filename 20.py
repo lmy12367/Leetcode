@@ -1,6 +1,6 @@
 ##解题方法1
-
-def isValid(self, s: str) -> bool:
+class Solution:
+    def isValid(self, s: str) -> bool:
         stack=[]
         dic={')':'(',']':'[','}':'{'}
 
@@ -15,8 +15,9 @@ def isValid(self, s: str) -> bool:
         
         return stack==[]
     
-
-def isValid1(self, s: str) -> bool:
+##解题方法1
+class Solution1:
+    def isValid1(self, s: str) -> bool:
         if len(s) == 0:
             return True
         
