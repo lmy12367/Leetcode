@@ -1,3 +1,4 @@
+from typing import List
 def maxFreeTime1(eventTime: int, k: int, startTime: List[int], endTime: List[int]) -> int:
         s = 0
         pre = 0
@@ -28,3 +29,4 @@ def maxFreeTime2( eventTime: int, k: int, startTime: List[int], endTime: List[in
         
         res = max(res, eventTime - pre - s)
         return res
+
