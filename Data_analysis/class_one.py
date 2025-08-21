@@ -1,0 +1,23 @@
+##day one
+##2025.8.21
+import numpy as np
+arr=np.array([1,2,3,4,5])
+print(arr)
+print(arr.shape)
+print(arr.ndim)
+arr=np.array(5)
+print(arr)
+print(arr.shape)
+print(arr.ndim)
+arr=np.array([[1,2,3],[2,3,4]])
+print(arr)
+print(arr.shape)
+print(arr.ndim)
+arr=np.array([[1,2,3],[2,3,4],[3,4,5]])
+print(arr)
+print(arr.shape)
+print(arr.ndim)
+arr=np.array([1,'hello'])
+print(arr)
+print(arr.shape)
+print(arr.ndim)
