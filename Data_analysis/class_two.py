@@ -51,3 +51,20 @@ print(app)
 agg=np.logspace(0,2,5,base=10)
 print(agg)
 
+arr=np.eye(3,4,dtype=int)
+print(arr)
+
+arr=np.diag([1,2,3])
+print(arr)
+
+arr=np.random.randn(3,4)
+print(arr)
+
+np.random.seed(20)
+arr=np.random.uniform(3,6,(2,3))
+print(arr)
+arr=np.random.randint(2,20,(3,3))
+print(arr)
+arr=np.random.normal(2,3,2)
+print(arr)
+
