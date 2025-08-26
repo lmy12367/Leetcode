@@ -28,5 +28,11 @@ print(s.iloc[1])
 print(s.loc['a':'c'])
 print(s.iloc[1:3])
 print(s.at['a'])
-
-
+print("############")
+print(s['a'])
+print(s[s<3])
+s['f']=6
+print(s.head())
+print(s.tail())
+print(s.head(2))
+print(s.tail(1))
