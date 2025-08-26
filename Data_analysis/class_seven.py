@@ -15,3 +15,18 @@ print(s)
 s1=pd.Series(s,index=['b'])
 print(s1)
 
+s=pd.Series({'a':1,'b':2,'c':3,'d':4,'e':5})
+print(s.index)
+print(s.values)
+print(s.shape)
+print(s.size)
+print(s.dtype)
+
+print(s.loc['a'])
+print(s.iloc[1])
+
+print(s.loc['a':'c'])
+print(s.iloc[1:3])
+print(s.at['a'])
+
+
