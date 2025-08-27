@@ -29,3 +29,33 @@ df=pd.DataFrame(
     },index=[1,2,3,4,5],columns=['name','score','age']
 )
 print(df)
+
+print('row index')
+print(df.index)
+print('line ')
+print(df.columns)
+
+print('values')
+print(df.values)
+
+print('维度')
+print(df.ndim)
+
+print('values type')
+print(df.dtypes)
+
+print('形状')
+print(df.shape)
+print(df.size)
+
+print(df.loc[4])
+print(df.iloc[3])
+
+print(df)
+print(df.loc[:,'name'])
+print(df.iloc[:,0])
+
+print(df.at[3,'score'])
+print(df.iat[2,1])
+
+
