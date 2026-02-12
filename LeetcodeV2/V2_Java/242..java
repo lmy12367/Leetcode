@@ -1,52 +1,50 @@
-/**
- * LeetCode 287. 寻找重复数
- * 使用快慢指针（Floyd's Tortoise and Hare Algorithm）
- */
-class FindDuplicate {
-    
-    /**
-     * 核心思想：将数组看成链表
-     * - nums[i] 的值表示下一个节点的索引
-     * - 由于存在重复数字，必然形成环
-     * - 使用快慢指针找到环的入口，即重复数字
-     */
-    public int findDuplicate(int[] nums) {
+class Solution242 {
+    public boolean isAnagram(String s, String t) {
+        // Step 1: 长度不等，直接 false
+        if (s.length() != t.length()) return false;
 
-        int slow = nums[0];
-        int fast = nums[nums[0]];
-        
+        // Step 2: 计数数组
+        int[] count = new int[26];
 
-        while (slow != fast) {
-            slow = nums[slow];              
-            fast = nums[nums[fast]];        
+        // Step 3: 统计 s
+        for (int i = 0; i < s.length(); i++) {
+            count[s.charAt(i) - 'a']++;
         }
-        
 
-        int pointer1 = nums[0];  
-        int pointer2 = slow;    
-        
-        while (pointer1 != pointer2) {
-            pointer1 = nums[pointer1];  
-            pointer2 = nums[pointer2];  
+        // Step 4: 抵消 t
+        for (int i = 0; i < t.length(); i++) {
+            count[t.charAt(i) - 'a']--;
         }
-        
-        return pointer1;
+
+        // Step 5: 检查是否全 0
+        for (int i = 0; i < 26; i++) {
+            if (count[i] != 0) return false;
+        }
+
+        return true;
     }
-    
-    // ========== 测试代码 ==========
-    public static void main(String[] args) {
-        FindDuplicate solution = new FindDuplicate();
-        
-        // 测试用例1
-        int[] nums1 = {1, 3, 4, 2, 2};
-        System.out.println("示例1: " + solution.findDuplicate(nums1));  // 输出: 2
-        
-        // 测试用例2
-        int[] nums2 = {3, 1, 3, 4, 2};
-        System.out.println("示例2: " + solution.findDuplicate(nums2));  // 输出: 3
-        
-        // 测试用例3
-        int[] nums3 = {1, 1};
-        System.out.println("示例3: " + solution.findDuplicate(nums3));  // 输出: 1
+
+        public static void main(String[] args) {
+        Solution242 solution = new Solution242();
+
+        // 测试用例 1
+        String s1 = "anagram";
+        String t1 = "nagaram";
+        System.out.println("Test1: " + solution.isAnagram(s1, t1)); // true
+
+        // 测试用例 2
+        String s2 = "rat";
+        String t2 = "car";
+        System.out.println("Test2: " + solution.isAnagram(s2, t2)); // false
+
+        // 测试用例 3（边界）
+        String s3 = "a";
+        String t3 = "a";
+        System.out.println("Test3: " + solution.isAnagram(s3, t3)); // true
+
+        // 测试用例 4（重复字符）
+        String s4 = "aacc";
+        String t4 = "ccac";
+        System.out.println("Test4: " + solution.isAnagram(s4, t4)); // false
     }
 }
